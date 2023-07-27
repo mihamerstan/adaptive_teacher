@@ -3,10 +3,7 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from detectron2.modeling.roi_heads.fast_rcnn import (
-    FastRCNNOutputLayers,
-    FastRCNNOutputs,
-)
+from detectron2.modeling.roi_heads.fast_rcnn import FastRCNNOutputLayers
 
 # focal loss
 class FastRCNNFocaltLossOutputLayers(FastRCNNOutputLayers):
@@ -35,7 +32,7 @@ class FastRCNNFocaltLossOutputLayers(FastRCNNOutputLayers):
         return losses
 
 
-class FastRCNNFocalLoss(FastRCNNOutputs):
+class FastRCNNFocalLoss(FastRCNNOutputLayers):
     """
     A class that stores information about outputs of a Fast R-CNN head.
     It provides methods that are used to decode the outputs of a Fast R-CNN head.
